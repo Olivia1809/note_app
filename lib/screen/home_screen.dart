@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/main.dart';
+import 'package:note_app/screen/add_note.dart';
 //import 'package:note_app/screen/add_note.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -38,7 +39,7 @@ Widget _buildPopupDialog(BuildContext context) {
         const SizedBox(height: 10),
         ElevatedButton(
           onPressed: () {
-            Navigator.pop(context); 
+            Navigator.push(context, MaterialPageRoute(builder: (context) => AddNoteScreen()));
           },
           child: const Text("NOTE",
           style: TextStyle(
