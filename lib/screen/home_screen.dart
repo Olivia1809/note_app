@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/main.dart';
 import 'package:note_app/screen/add_note.dart';
 //import 'package:note_app/screen/add_note.dart';
 
@@ -9,16 +8,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title : const Text('Notepad'),
-        actions: [
-          IconButton(
-            onPressed: () {
-            showDialog( 
-                context: context,
-                builder: (BuildContext context) => _buildPopupDialog(context), 
-              );
-            }, 
+        appBar: AppBar(
+          title: const Text('Notes'),
+          actions: [
+            IconButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) => _buildPopupDialog(context),
+                );
+              },
             icon: const Icon(Icons.add),
           ),
         ],
@@ -61,6 +60,16 @@ Widget _buildPopupDialog(BuildContext context) {
       ],
     ),
     //shape: ,
-    backgroundColor:const  Color.fromARGB(255, 3, 34, 4),
-  );
+    backgroundColor: const Color.fromARGB(255, 3, 34, 4),
+
+    floatingActionButton: FloatingActionButton(
+          tooltip: "Add Note",
+          onPressed: () {
+            Get.to(() => AddNotePage());
+          },
+          child: Icon(
+            Icons.note_add,
+            size: 30,
+          )),
+    );
 }
