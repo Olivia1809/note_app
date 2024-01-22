@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/screen/add_note.dart';
-//import 'package:note_app/screen/add_note.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,6 +8,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         title: const Text('Notes'),
         actions: [
           IconButton(
@@ -25,57 +26,69 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       drawer: const Drawer(),
-      /*  body: const Padding(
-        padding: EdgeInsets.all(8.0),
-      ) */
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color.fromARGB(210, 125, 121, 153), Colors.grey],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         tooltip: "Add Note",
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddNoteScreen()),
-          );
+          const SizedBox(height: 10);
+          _showAddNoteDialog(context);
         },
         child: const Icon(
           Icons.note_add,
-          //color: Theme.of(context).colorScheme.background,
-          size: 30,
+          size: 20,
         ),
       ),
     );
   }
-  /*  Widget _buildPopupDialog(BuildContext context) {
-    return AlertDialog(
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
+
+  void _showAddNoteDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        backgroundColor: const Color.fromARGB(210, 125, 121, 153),
+        //
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+                Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const AddNoteScreen()));
-            },
-            child: const Text(
-              "NOTE",
-              style: TextStyle(fontSize: 54, fontWeight: FontWeight.normal),
+                      builder: (context) => const AddNoteScreen()),
+                );
+              },
+              child: const Text(
+                "NOTE",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text(
-              "TO-DO",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.normal),
+            const SizedBox(height: 5),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the dialog
+                // Add your logic for TO-DO button
+              },
+              child: const Text(
+                "TO-DO",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-      //shape: ,
-      //backgroundColor: const Color.fromARGB(255, 3, 34, 4),
     );
-  } */
+  }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:note_app/screen/home_screen.dart';
 
 class AddNoteScreen extends StatefulWidget {
+  static const String routeName = '/addNote';
   const AddNoteScreen({super.key});
 
   @override
@@ -32,7 +33,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                       );
                     },
                     icon: const Icon(
-                      Icons.arrow_back_ios_outlined, //Back arrow
+                      Icons.arrow_back_ios_outlined,
+                      size: 20, //Back arrow
                     ),
                   ),
                   SizedBox(
@@ -41,7 +43,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   const Text(
                     "Notes",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(210, 251, 253, 255),
                     ),
@@ -60,6 +62,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                     },
                     icon: const Icon(
                       Icons.delete_rounded, //Back arrow
+                      size: 20,
                     ),
                   ),
                 ],
