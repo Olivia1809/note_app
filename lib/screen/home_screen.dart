@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/screen/add_note.dart';
-import 'package:note_app/screen/to_do.dart';
+import 'package:note_app/screen/todo.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -30,9 +30,12 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color.fromARGB(210, 125, 121, 153), Colors.grey],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(210, 125, 121, 150),
+              Color.fromARGB(255, 116, 133, 187)
+            ],
+            begin: Alignment.bottomLeft,
+            end: Alignment.bottomRight,
           ),
         ),
       ),
