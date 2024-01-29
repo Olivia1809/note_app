@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/screen/add_note.dart';
+import 'package:note_app/screen/to_do.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -63,7 +64,7 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context); // Close the dialog
+                Navigator.pop(context);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -78,8 +79,11 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 5),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context); // Close the dialog
-                // Add your logic for TO-DO button
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const App()),
+                );
               },
               child: const Text(
                 "TO-DO",

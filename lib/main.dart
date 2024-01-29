@@ -5,7 +5,7 @@ import 'package:note_app/screen/home_screen.dart';
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
   seedColor: const Color.fromARGB(210, 125, 121, 153),
-  background: const Color.fromARGB(255, 62, 64, 73),
+  background: const Color.fromARGB(255, 0, 2, 8),
 );
 
 final theme = ThemeData().copyWith(
