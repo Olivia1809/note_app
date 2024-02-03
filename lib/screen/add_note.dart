@@ -17,7 +17,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       body: SafeArea(
         child: Container(
           height: size.height,
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: <Widget>[
               Row(
@@ -32,10 +32,10 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                             builder: (context) => const HomeScreen()),
                       );
                     },
-                    icon: const Icon(
-                      Icons.arrow_back_ios_outlined,
-                      size: 20, //Back arrow
-                    ),
+                    icon: const Icon(Icons.arrow_back_ios_outlined,
+                        size: 20,
+                        color: Color.fromARGB(255, 247, 10, 168) //Back arrow
+                        ),
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 4,
@@ -45,14 +45,14 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(210, 251, 253, 255),
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 4,
                   ),
                   IconButton(
-                    color: const Color.fromARGB(210, 251, 253, 255),
+                    color: const Color.fromARGB(255, 247, 10, 168),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -81,9 +81,9 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                           //labelStyle: TextStyle(color: Colors.black),
                         ),
                         style: const TextStyle(
-                          fontSize: 26.0,
-                          fontWeight: FontWeight.w500,
-                        ),
+                            fontSize: 26.0,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
                       ),
                       const SizedBox(height: 18),
                       TextFormField(
@@ -92,11 +92,11 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         textCapitalization: TextCapitalization.sentences,
                         decoration: const InputDecoration.collapsed(
                           hintText: 'Type something',
-                          //labelStyle: TextStyle(color: Colors.black),
+                          fillColor: Colors.white,
+                          //labelStyle: TextStyle(color: Colors.white),
                         ),
                         style: const TextStyle(
-                          fontSize: 18.0,
-                        ),
+                            fontSize: 18.0, color: Colors.white),
                       ),
                     ],
                   ),

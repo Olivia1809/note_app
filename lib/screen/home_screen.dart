@@ -9,36 +9,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: const Text('Notes'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              /* showDialog(
-                context: context,
-                builder: (BuildContext context) => _buildPopupDialog(context),
-              ); */
-            },
-            icon: const Icon(
-              Icons.settings,
-            ),
-          ),
-        ],
-      ),
-      drawer: const Drawer(),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(210, 125, 121, 150),
-              Color.fromARGB(255, 116, 133, 187)
-            ],
-            begin: Alignment.bottomLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-      ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: const Text('Notes'),
+          iconTheme: const IconThemeData(color: Colors.pink)),
+      drawer: const Drawer(backgroundColor: Colors.pink),
+      body: Container(),
       floatingActionButton: FloatingActionButton(
         tooltip: "Add Note",
         onPressed: () {
@@ -60,7 +36,7 @@ class HomeScreen extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
-        backgroundColor: const Color.fromARGB(210, 125, 121, 153),
+        backgroundColor: Colors.pink,
         //
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -76,7 +52,10 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text(
                 "NOTE",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white),
               ),
             ),
             const SizedBox(height: 5),
@@ -90,7 +69,10 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text(
                 "TO-DO",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white),
               ),
             ),
           ],
