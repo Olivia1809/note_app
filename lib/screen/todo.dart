@@ -18,10 +18,10 @@ class StrikeThrough extends StatelessWidget {
   final bool todoToggle;
 
   const StrikeThrough({
-    Key? key,
+    super.key,
     required this.todoText,
     required this.todoToggle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
